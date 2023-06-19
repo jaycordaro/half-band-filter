@@ -21,7 +21,7 @@ only 8 multiplies are required to implement this 27-tap filter.
 
 ### fi, and the problem with fi
 
-In RTL, fixed point filters are implemented in various formats, Q Format is the most common, although I have seen others in industry.  The Matlab `fi` functions are useful to check for overflow and optimize bit-widths, but the actual filter implementation is typically in Q format.  Fortunately, converting from the Matlab floating point to Q format is very straightforward.
+In RTL, fixed point filters are implemented in various formats, Q Format is the most common, although I have seen others in industry.  The Matlab `fi` functions are useful to check for overflow and optimize bit-widths, but the actual filter implementation is typically in Q format, so there is this diconnect between Matlab and what is actually implemented.  Fortunately, converting from the Matlab floating point to Q format is very straightforward, as you can see below.
 
 ### Q Format and Q Conversion to/from float:
 For this code, Q.15 is used and consists of a sign bit plus 15 fractional bits = 16 bits.  For more information on Q Format, see the [Wikipedia](https://en.wikipedia.org/w/index.php?title=Q_(number_format)) page.  

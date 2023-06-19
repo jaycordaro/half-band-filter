@@ -53,10 +53,8 @@ module hb_filter(input logic clk,
 	always_ff @(posedge clk or negedge reset_n) begin
 		if (~reset_n) begin
 			x_in_reg <= 16'b0000000000000000;
-			
 		end else begin
 			x_in_reg <= x_in;
-			
 		end
 	end
 	
@@ -73,10 +71,10 @@ module hb_filter(input logic clk,
     p0 = w0 *( taps[0] + taps[26]);
     p1 = w2 *( taps[2] + taps[24]);
     p2 = w4 *( taps[4] + taps[22]);
-	p3 = w6 *( taps[6] + taps[20]);
+    p3 = w6 *( taps[6] + taps[20]);
     p4 = w8 *( taps[8] + taps[18]);
     p5 = w10*(taps[10] + taps[16]);
-	p6 = w12*(taps[12] + taps[14]);
+    p6 = w12*(taps[12] + taps[14]);
     // compute the dot product of coefficients and register values
     sum = p0 + p1 + p2 + p3 + p4 + p5 + p6 + w13*taps[13];
     y = sum; // assign output

@@ -2,5 +2,5 @@
 
 # Usage:
 
-Markup 'hb_check_tb(Fs, F0, T)'
+Markup `hb_check_tb(Fs, F0, T)`
 

@@ -50,8 +50,6 @@ module hb_filter(input logic clk,
 	
 	logic outcount;
 	
-	logic signed [15:0] junk;
-	
 	always_ff @(posedge clk or negedge reset_n) begin
 		if (~reset_n) begin
 			x_in_reg <= 16'b0000000000000000;
@@ -62,21 +60,11 @@ module hb_filter(input logic clk,
 		end
 	end
 	
-	
-	
 	always_ff @(posedge clk or negedge reset_n) begin
 		if (~reset_n) begin
 		  taps <= '{default: 16'b0000000000000000};
 		end else begin
 		  taps <= {taps[25:0], x_in};
-		end
-	end
-	
-	always_ff @(posedge clk or negedge reset_n) begin
-		if (~reset_n) begin
-		  junk <= 16'b00000000_00000000;
-		end else begin
-		  junk <= x_in_reg;
 		end
 	end
 	

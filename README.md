@@ -12,9 +12,10 @@ An implementation of a half-band filter, from MATLAB to fixed point in SystemVer
 
 <img src="./images/half_band_filter_taps.png">
 
-We can see that this odd-length Symmetric FIR filter has every even tap except the middle tap to have a value of 0.  This allows the filter to be implemented in an efficient manner:
+We can see that this odd-length Symmetric FIR filter has every even tap except the middle tap to have a value of 0, and the taps have symmetry about the center tap.  This allows the filter to be implemented in an efficient manner:
 
 <img src="./images/hbfilter.png">
+only 8 multiplies are required to implement this 27-tap filter.
 
 ### Matlab Implementation
 

@@ -13,10 +13,10 @@ An implementation of a half-band filter, from MATLAB to fixed point in SystemVer
 
 ### fi, and the problem with fi
 
-In RTL, fixed point filters are implemented in various formats, Q Format is the most common, although I have seen others in industry.  The `fi` function are useful to check for overflow and optimize bit-widths, but the actual filter implementation will be in Q format.  
+In RTL, fixed point filters are implemented in various formats, Q Format is the most common, although I have seen others in industry.  The Matlab `fi` functions are useful to check for overflow and optimize bit-widths, but the actual filter implementation is typically in Q format.  
 
 ### Q Format
-For this code, Q.15 consists of a sign bit plus 15 fractional bits = 16 bits.  For more information on Q Format, see the Wikipedia page.  
+For this code, Q.15 is used and consists of a sign bit plus 15 fractional bits = 16 bits.  For more information on Q Format, see the Wikipedia page.  
 
 ### Q Conversion
 
@@ -30,5 +30,5 @@ Round to the nearest integer
 #### Q to float
 To convert a number from Qm.n format to floating point:
 
-Convert the number to floating point as if it were an integer, in other words remove the binary point
+Convert the number to floating point as if it were an integer, remove the binary point
 Multiply by (2^−n -1)

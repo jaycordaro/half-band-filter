@@ -25,12 +25,10 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 module hb_filter(input logic clk,
-				 input logic reset_n,
-				 input logic signed [15:0] x_in,    
-				 output logic signed [15:0] y_out
-				 );
-				 
-	logic signed [15:0] x_in_reg;
+		 input logic reset_n,
+		 input logic signed [15:0] x_in,    
+		 output logic signed [15:0] y_out
+		 );
 	
 	logic signed [15:0] taps [26:0];  // a 27-tap FIR filter
 	logic signed [30:0] sum;
@@ -49,14 +47,6 @@ module hb_filter(input logic clk,
 	const logic signed [15:0] w13 = 16383;
 	
 	logic outcount;
-	
-	always_ff @(posedge clk or negedge reset_n) begin
-		if (~reset_n) begin
-			x_in_reg <= 16'b0000000000000000;
-		end else begin
-			x_in_reg <= x_in;
-		end
-	end
 	
 	always_ff @(posedge clk or negedge reset_n) begin
 		if (~reset_n) begin
@@ -80,22 +70,16 @@ module hb_filter(input logic clk,
     y = sum; // assign output
   end
   
-   
-    
     always_ff @(posedge clk or negedge reset_n) begin
 		if (~reset_n) begin
 			y_out <=0;
 			outcount <= 0;
-
 		end else if (outcount == 1 ) begin
 			outcount <=0;
 			y_out <= y >> 15;
-
 		end else begin
 			outcount <= outcount + 1;
-
 		end
 	end
-  
-
+	
 endmodule

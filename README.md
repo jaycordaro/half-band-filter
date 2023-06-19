@@ -5,9 +5,16 @@ An implementation of a half-band filter, from MATLAB to fixed point in SystemVer
 
 * `readme.md` you're reading this
 * ./matlab/ - Directory containing Matlab functions to design the half-band filter, check the implementation in fixed point, and create test vectors for RTL vector matching
-* ./rtl/ - Directory containing SystemVerilog RTL code consisting of a synthesizable module and a test bench using the test vectors created with Matlab.  
+* ./rtl/ - Directory containing SystemVerilog RTL code consisting of a synthesizable module and a test bench using the test vectors created with Matlab.
+* ./images/ - images for this repo
 
 ## Half-Band Filters
+
+<img src="./images/half_band_filter_taps.png">
+
+This allows the filter to be implemented in an efficient manner:
+
+<img src="./images/hbfilter.png">
 
 ### Matlab Implementation
 

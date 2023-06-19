@@ -7,16 +7,19 @@ An implementation of a half-band filter, from MATLAB to fixed point in SystemVer
 
 ## fi, and the problem with fi
 ## Q Format
-For this code, Q.15 consists of a sign bit plus 15 fractional bits = 16 bits.  In this code,
+For this code, Q.15 consists of a sign bit plus 15 fractional bits = 16 bits.  
 
 ## Q Conversion
+
+For our purposes, Q conversions are as follows:
 ### Float to Q
 To convert a number from floating point to Qm.n format:
 
-Multiply the floating point number by 2^n -1
+Multiply the floating point number by (2^n -1)
 Round to the nearest integer
+
 ### Q to float
 To convert a number from Qm.n format to floating point:
 
 Convert the number to floating point as if it were an integer, in other words remove the binary point
-Multiply by 2^−n 
+Multiply by (2^−n -1)

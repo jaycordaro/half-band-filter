@@ -1,1 +1,8 @@
+# SystemVerilog RTL
 
+A SystemVerilog implementation of the Matlab-designed filter.  Rather than relying on Matlab `fi` function(s), the Matlab is implemented in Q15.  The SystemVerilog module implementes `hb_check.m` in fixed-point Q15.
+
+## Usage
+
+`hb_filter.sv` is fully synthesizable
+`hb_filter_tb.sv` was checked in ModelSim 2021.4

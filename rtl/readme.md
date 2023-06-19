@@ -1,6 +1,10 @@
 # SystemVerilog RTL
 
-A SystemVerilog implementation of the Matlab-designed filter.  Rather than relying on Matlab `fi` function(s), the Matlab is implemented in Q15.  The SystemVerilog module implementes `hb_check.m` in fixed-point Q15.
+A SystemVerilog implementation of the Matlab-designed filter.  Rather than relying on Matlab `fi` function(s), the Matlab is implemented in Q.15.  The SystemVerilog module implementes `hb_check.m` in fixed-point Q.15.
+
+## Clock considerations
+
+The filter could be implemented as Polyphase, but it is not.  Instead, the filter operates at the input clock rate.  Downsampling in Matlab is trivial: just do `junk=signal(1:2:length(signal);`.  In RTL it is a little more complicated.  We have synchronous logic and we are going from a faster clock domain to a slower clock domain.  It could be handled several ways.  The concern is the possibility of the bits arriving downstream at slightly different rates.  The first approach to handle that is to use a counter with a clock_en to only enable the lower data rate operations every 2nd clock.  The second method, and is the lowest power method, is to use a short asynchronous FIFO.  I think it would also be possible to utilize a Multi-Cycle Path (MCP).  I intend to try out all the approaches but for right now it uses a clock enable.  
 
 ## Usage
 

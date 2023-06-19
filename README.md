@@ -12,7 +12,7 @@ An implementation of a half-band filter, from MATLAB to fixed point in SystemVer
 
 <img src="./images/half_band_filter_taps.png">
 
-We can see that this odd-length Symmetric FIR filter has every even tap except the middle tap to have a value of 0, and the taps have symmetry about the center tap.  This allows the filter to be implemented in an efficient manner:
+We can see that this odd-length Symmetric FIR filter has every even tap except the middle tap has a value of 0, and the taps have symmetry about the center tap.  This allows the filter to be implemented in an efficient manner:
 
 <img src="./images/hbfilter.png">
 only 8 multiplies are required to implement this 27-tap filter.
@@ -23,10 +23,8 @@ only 8 multiplies are required to implement this 27-tap filter.
 
 In RTL, fixed point filters are implemented in various formats, Q Format is the most common, although I have seen others in industry.  The Matlab `fi` functions are useful to check for overflow and optimize bit-widths, but the actual filter implementation is typically in Q format.  
 
-### Q Format
+### Q Format and Q Conversion to/from float:
 For this code, Q.15 is used and consists of a sign bit plus 15 fractional bits = 16 bits.  For more information on Q Format, see the Wikipedia page.  
-
-### Q Conversion
 
 For our purposes, Q conversions are as follows:
 #### Float to Q

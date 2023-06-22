@@ -33,11 +33,11 @@ for i = 1:NumSamples
 end
 
 fileID=fopen('inputs.txt','w')
-fprintf(fileID,"%i\n", round(input*32767))
+fprintf(fileID,"%i\n", round(input*32768))
 fclose(fileID);
 
 fileID2=fopen('outputs.txt','w')
-fprintf(fileID2,"%i\n", round(results*32767))
+fprintf(fileID2,"%i\n", round(results*32768))
 fclose(fileID2);
 
 figure('Name', [mfilename, '_inout']);

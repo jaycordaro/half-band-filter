@@ -5,9 +5,9 @@ module hb_filter_tb();
 	logic clk;
 	logic reset_n;
 
-    logic signed [15:0] A; //register declaration for storing each line of file.
-	logic signed [15:0] B;
-	logic signed [15:0] hb_1_out;
+    logic signed [15:0] A; // variable for reference input to filter
+	logic signed [15:0] B; // variable for reference output for filter
+	logic signed [15:0] hb_1_out; // actual filter output
 
     integer outfile0,outfile1; //file descriptors
 	int c, d;
@@ -33,8 +33,8 @@ initial begin
 	
     //The $fopen function opens a file and returns a multi-channel descriptor 
     //in the format of an unsized integer. 
-    outfile0=$fopen("inputs.txt","r");   //"r" means reading and "w" means writing
-    outfile1=$fopen("outputs.txt","r");
+    outfile0=$fopen("../matlab/inputs.txt","r");   //"r" means reading and "w" means writing
+    outfile1=$fopen("../matlab/outputs.txt","r");
 
 	
     //read the contents of the file A_hex.txt as hexadecimal values into register "A".

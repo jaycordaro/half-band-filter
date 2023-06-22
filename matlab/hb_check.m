@@ -11,14 +11,14 @@ persistent sum;
 
 if (isempty(taps))
     taps = zeros(1,27); % a 27-tap FIR filter
-    w0 =    459;
-    w2 =   -484;
-    w4 =   749;
-    w6 =  -1154;
-    w8 =   1834;
-    w10 = -3323;
-    w12 = 10377;
-    w13 = 16383;
+    w0 =    460;
+    w2 =   -483;
+    w4 =   750;
+    w6 =  -1153;
+    w8 =   1835;
+    w10 = -3322;
+    w12 = 10378;
+    w13 = 16384;
     p0 = 0; p1 = 0; p2 = 0; p3 = 0; p4 = 0; p5 = 0; p6=0; % partial sums
     sum=0;
 end

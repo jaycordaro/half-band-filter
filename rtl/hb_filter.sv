@@ -39,24 +39,13 @@ module hb_filter(input logic clk,
 	
 	const logic signed [15:0] w[0:6] = {  460,
 	                                     -483,
-										  750,
-										-1153,
-										 1835,
-										-3322,
-										10378};
+					      750,
+					    -1153,
+					     1835,
+					    -3322,
+					    10378};
 										
 	const logic signed [15:0] w13=16384;
-										
-	/*const logic signed [15:0] w0 =    459;
-	const logic signed [15:0] w2 =   -484;
-	const logic signed [15:0] w4 =    749;
-	const logic signed [15:0] w6 =  -1154;
-	const logic signed [15:0] w8 =   1834;
-	const logic signed [15:0] w10 = -3323;
-	const logic signed [15:0] w12 = 10377;
-	const logic signed [15:0] w13 = 16383;*/
-	
-	//logic outcount;
 	
 	always_ff @(posedge clk or negedge reset_n) begin
 		if (~reset_n) begin
@@ -70,13 +59,6 @@ module hb_filter(input logic clk,
     // compute the products of symmetric coefficients and register values
 	for (int i = 0; i < 7; i = i+1)
 		p[i] = w[i] * (taps[i*2] + taps[26-i*2]);
-    /* p0 = w0 *( taps[0] + taps[26]);
-    p1 = w2 *( taps[2] + taps[24]);
-    p2 = w4 *( taps[4] + taps[22]);
-    p3 = w6 *( taps[6] + taps[20]);
-    p4 = w8 *( taps[8] + taps[18]);
-    p5 = w10*(taps[10] + taps[16]);
-    p6 = w12*(taps[12] + taps[14]); */
     // compute the dot product of coefficients and register values
     sum = p[0] + p[1] + p[2] + p[3] + p[4] + p[5] + p[6] + w13*taps[13]; //$signed(taps[13]<<<14);//w13*taps[13];
     //y = sum; // assign output

@@ -30,11 +30,11 @@ For our purposes, Q conversions are as follows:
 #### Float to Q
 To convert a number from floating point to Qm.n format:
 
-Multiply the floating point number by (2^n -1)
-Round to the nearest integer
+Multiply the floating point number by 2^n.  Round to the nearest integer.
+Note that in software, it is common to convert float to Q by multiplying by (2^n -1).  In hardware, 2^n is more common.  0.5 would be exactly represented as 2^14 in this case, whereas there would be a very small error in the case of 2^n -1.
 
 #### Q to float
 To convert a number from Qm.n format to floating point:
 
 Convert the number to floating point as if it were an integer, remove the binary point
-Multiply by (2^−n -1)
+Multiply by 2^-n.  (2^−n -1)

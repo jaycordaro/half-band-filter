@@ -1,5 +1,5 @@
 # half-band-filter
-An implementation of a half-band filter, from MATLAB to fixed point in SystemVerilog.  It annoyed me there was not much fixed point FIR filter code, showing how to take a Matlab model and generate RTL. 
+An implementation of a half-band FIR filter, from MATLAB to fixed point in SystemVerilog.  It annoyed me there was not much fixed point FIR filter code, showing how to take a Matlab model and generate RTL. 
 
 ## Contents
 

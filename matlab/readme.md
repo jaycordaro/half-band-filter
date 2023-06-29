@@ -8,7 +8,7 @@ It is certainly possbile to write these functions in Python or C++, however I am
 
 <img src="../images/half_band_freq_resp.png">
 
-You can modify the design constraints and generate a different filter response and evaluate it.
+This is not a particularly awesome filter in terms of frequency response, it is intended to be used as the 2nd and 3rd decimation filters for a Pulse Density Modulation (PDM) microphone to PCM converter, and that is all that is required for that application. You can modify the design constraints and generate a different filter response and evaluate it.
 
 # hb_check and hb_check_tb
 

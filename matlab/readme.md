@@ -4,7 +4,7 @@ It is certainly possbile to write these functions in Python or C++, however I am
 
 # hb_design
 
-`hb_design.m` designs a half-band filter using the Parks–McClellan algorithm in floating point which means the design constraints. Every odd tap has magnitude zero, and the coefficients are symmetric, which reduces the number of multipliers required.  The program then converts the floating point to fixed point and plots the frequency response of both the floating point and fixed point models.  Q15 is more than enough bits to represent the coefficients so there is no loss shown when fixed point frequency response is overlaid with the floating point.  
+`hb_design.m` designs a half-band filter using the Parks–McClellan algorithm in floating point which meets the design constraints. Every odd tap has magnitude zero, and the coefficients are symmetric, which reduces the number of multipliers required.  The program then converts the floating point to fixed point and plots the frequency response of both the floating point and fixed point models.  Q15 is more than enough bits to represent the coefficients so there is no loss shown when fixed point frequency response is overlaid with the floating point.  
 
 <img src="../images/half_band_freq_resp.png">
 

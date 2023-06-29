@@ -9,6 +9,7 @@ An implementation of a half-band FIR filter, from MATLAB to fixed point in Syste
 * ./images/ - images for this repo
 
 ## Half-Band Filters
+Check out the ./matlab/ directory for more information on half-band filters.
 
 <img src="./images/half_band_filter_taps.png">
 

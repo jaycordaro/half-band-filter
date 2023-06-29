@@ -9,8 +9,6 @@ It is certainly possbile to write these functions in Python or C++, however I am
 The program then converts the floating point to fixed point and plots the frequency response of both the floating point and fixed point models.  Q15 is more than enough bits to represent the coefficients so there is no loss shown when fixed point frequency response is overlaid with the floating point.  
 
 <img src="../images/half_band_freq_resp.png">
-
-<img src="../images/half_band_freq_resp.png">
 This is not a particularly awesome filter in terms of frequency response, it is intended to be used as the 2nd and 3rd decimation filters for a multi-stage Pulse Density Modulation (PDM) microphone to PCM converter, and that is all that is required for that application. You can modify the design constraints and generate a different filter response and evaluate it.
 
 # hb_check and hb_check_tb

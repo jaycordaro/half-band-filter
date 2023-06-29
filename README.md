@@ -9,7 +9,7 @@ An implementation of a half-band FIR filter, from MATLAB to fixed point in Syste
 * ./images/ - images for this repo
 
 ## Half-Band Filters
-Check out the ./matlab/ directory for more information on half-band filters.
+Check out the ./matlab/ directory for more information on half-band filters.  The impulse response for the 27-tap half-band filter is shown below:
 
 <img src="./images/half_band_filter_taps.png">
 
@@ -38,4 +38,4 @@ Note that in software, it is common to convert float to Q by multiplying by (2^n
 To convert a number from Qm.n format to floating point:
 
 Convert the number to floating point as if it were an integer, remove the binary point
-Multiply by 2^-n.  (2^−n -1)
+Multiply by 2^-n. 

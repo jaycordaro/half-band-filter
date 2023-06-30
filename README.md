@@ -15,7 +15,7 @@ Check out the ./matlab/ directory for more information on half-band filters.  Th
 
 We can see from the impulse response that this is an odd-length Symmetric FIR filter which approximates a windowed discrete Sinc function, and every 2nd tap except for the middle tap has a value of 0, and the taps have symmetry about the center tap.  This allows the filter to be implemented in an efficient manner:
 
-<img src="./images/hbfilter.png">
+<img src="./images/hbfilter2.png">
 only 8 multiplies are required to implement this 27-tap filter.
 
 ### Matlab Implementation
